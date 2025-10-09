@@ -1,0 +1,139 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    
+    *{
+            text-decoration: none;
+        }
+    body{
+      margin: 0;
+      font-family: sans-serif;
+    }
+    .navbar{
+      background-color: rgb(24, 24, 87); 
+      padding: 60px;
+      border: 1px solid rgb(238, 230, 2);
+        }
+    .navdiv{
+            display: flex; align-items: center; justify-content: space-between;
+        }
+    .topright {
+      position: absolute;
+      top: 10px;
+      right: 50px;
+      width: 200px;
+    }
+
+    .topleft1 {
+      position: absolute;
+      top: 20px;
+      left: 50px;
+      width: 150px;
+      color: rgb(215, 158, 26);
+    }
+
+    .button1{
+        position: absolute;
+        top: 120px;
+        right: 600px;
+        
+    }
+
+    .button2{
+        position: absolute;
+        top: 120px;
+        right: 480px;
+    }
+
+    .button3{
+        position: absolute;
+        top: 120px;
+        right: 350px;
+    }
+    .button4{
+        position: absolute;
+        top: 120px;
+        right: 200px;
+    }
+    .button5{
+        position: absolute;
+        top: 120px;
+        right: 110px;
+    }
+    li{
+            list-style: none; display: inline-block;
+        }
+    li a{
+            color: white; font-size: 14; font-weight: bold; margin-right: 25px;
+        }
+    .color{
+        color: rgb(170, 143, 22);
+        background-color: rgb(24, 24, 87);
+        
+        border: 1px solid rgb(238, 230, 2);
+    }
+    
+
+</style>
+
+<nav class="navbar">
+    <div class="navdiv">
+      <img src="{%static 'image/scopeindia-logo.webp'%}" class="topleft1" alt="">
+      <img src="{%static 'image/logo2.webp'%}"  class="topright" alt="">
+      <ul>
+        <li class="button1" ><a href="{%url 'home'%}">HOME</a></li>
+        <li class="button2" ><a href="{%url 'about'%}">ABOUT US</a></li>
+        <li class="button3"><a href="{%url 'contact'%}">CONTACT US</a></li>
+        <li class="button4"><a href="{%url 'form'%}">REGISTRATION</a></li>
+        <li class="button5"><a href="{%url 'login'%}">LOGIN</a></li>
+      </ul>     
+    </div>
+</nav> 
+</head>
+<div class="color">
+<center><h1 >Know About SCOPE INDIA</h1></center>
+</div>
+<body style="color: white; ">
+    <div style=" background-color: rgb(38, 38, 118); padding:25px;">
+    <center><h1 style="font-size: xxx-large;">SCOPE INDIA, your career partner!</h1><br>
+    <b><p style="font-size: xx-large; line-height: 1.5;">One of India's best Training destinations for Software, Networking, DevOps and Cloud Computing courses with 18 years of Industrial experience. Over 1,000 students find their dream careers each year, and we have assisted more than 15,000 students so far.</p></b> <br>
+    <p style="font-size: large; line-height: 2;">Software, Networking, and Cloud Professional Education Centre in Kerala and Tamil Nadu from Suffix E Solutions with WORKING PROFESSIONALS oriented on-the-job TRAINING model. SCOPE INDIA provides courses for Software Programming in Python (Data Science | Artificial Intelligence | Machine Learning | Deep Learning, Data Analytics), Java, PHP, .Net, MERN, Software Testing Manual and Automation, Cloud Computing (AWS | Azure), Server Administration (MicroSoft MCSE | Linux RHCE), Networking (CCNA), DevOps, Mobile App Development in Flutter, and Digital Marketing. A Training with a 100% Trusted Job-Based Internship Model. SCOPE INDIA has a Strong Placement Cell that provides jobs to thousands of students annually. We assure you, you won't regret it after training from SCOPE INDIA!
+
+This is how SCOPE INDIA can support both newbies and those experienced in the industry to upgrade their skills.</p></center>
+    </div>
+</body>
+        
+
+  <style>
+    
+.footer {
+  background-color: rgb(24, 24, 87);
+  color: white;
+  text-align: center;
+  padding: 20px;
+  border-top: 3px solid rgb(238, 230, 2);
+  width: 98%;
+  position: absolute;
+  top: 900px;
+  left: 0px;
+      
+}
+
+
+  </style>
+</head>
+<body>
+<div class="main-content">
+  <footer class="footer">
+    <p>We are located at Technopark TVM | Thampanoor TVM | Kochi, Kerala | Nagercoil, Tamil Nadu</p>
+    <p>9745936073 (TPK) 9745936073 (TVM) 7592939481 (EKM) 8075536185 (NGL) info@scopeindia.org</p>
+    <p>All Rights Reserved SCOPE INDIA & SUFFIX E SOLUTIONS PRIVATE LIMITED © 2007-2025 | Privacy Policy | Blog</p>
+  </footer>
+</div>
+</body>
+</html>

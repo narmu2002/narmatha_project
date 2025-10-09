@@ -1,0 +1,187 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather & AQI Dashboard</title>
+    <link>
+    <style>
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+             background-image: url("{% static 'images/12.jpg' %}");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      height: 75vh;
+            color: #333;
+        }
+
+        .container {width: 90%;
+            max-width: 500px;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+            padding: 30px;
+            text-align: center;
+            max-width: 800px;
+            margin: 100px auto;
+            padding: 20px;
+            
+
+        }
+
+        h2 {
+            font-weight: 600;
+            margin-bottom: 30px;
+            color: #0b3d91;
+        }
+
+        h1{
+            font-weight: 600;
+            margin-bottom: 30px;
+            color: #910b64;
+        }
+        form {
+            margin-bottom: 40px;
+        }
+
+        select {
+            padding: 10px 15px;
+            border-radius: 8px;
+            border: 1px solid #0b3d91;
+            font-size: 16px;
+            width: 250px;
+            transition: 0.3s;
+        }
+
+        select:hover {
+            border-color: #0553a0;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin-left: 10px;
+            border: none;
+            border-radius: 8px;
+            background-color: #0b3d91;
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background-color: #0553a0;
+        }
+
+        /* ---- Cards ---- */
+        .cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .card {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 25px;
+            width: 300px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h3 {
+            margin-top: 0;
+            color: #0b3d91;
+        }
+
+        /* ---- AQI Styling ---- */
+        .aqi {
+            font-weight: 600;
+            padding: 6px 12px;
+            border-radius: 8px;
+            color: white;
+            display: inline-block;
+        }
+
+        .good { background-color: #28a745; }
+        .fair { background-color: #ffc107; color: #333; }
+        .moderate { background-color: #fd7e14; }
+        .poor { background-color: #dc3545; }
+        .verypoor { background-color: #6f1e51; }
+
+        .error {
+            color: red;
+            font-weight: 600;
+            margin-top: 20px;
+        }
+
+        /* ---- Responsive ---- */
+        @media (max-width: 650px) {
+            .cards {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>🌦️ Weather & AQI Dashboard - Tamil Nadu</h2>
+
+        <!-- ---- Dropdown Form ---- -->
+        <form method="get">
+            <select name="city" required>
+                <option value="" disabled selected>Select a city</option>
+                {% for city in cities %}
+                    <option value="{{ city }}" {% if request.GET.city == city %}selected{% endif %}>
+                        {{ city }}
+                    </option>
+                {% endfor %}
+            </select>
+            <button type="submit">Search</button>
+        </form>
+
+        <h1>{{ weather.city }}</h1>
+        <br>
+        <!-- ---- Cards ---- -->
+        {% if weather %}
+        <div class="cards">
+            <div class="card">
+                <h3>Forecast</h3>
+                <p><b>Temperature:</b> {{ weather.temperature }}°C</p>
+                <p><b>Humidity:</b> {{ weather.humidity }}%</p>
+                <p><b>Wind:</b> {{ weather.wind }} m/s</p>
+                <p><b>Condition:</b> {{ weather.description }}</p>
+            </div>
+
+            <div class="card">
+                <h3>Air Quality Index (AQI)</h3>
+                <p>
+                    <span class="aqi
+                        {% if aqi.quality == 'Good 🌿' %}good{% elif aqi.quality == 'Fair 🌤️' %}fair
+                        {% elif aqi.quality == 'Moderate 🌫️' %}moderate{% elif aqi.quality == 'Poor 😷' %}poor
+                        {% else %}verypoor{% endif %}
+                    ">
+                        {{ aqi.aqi }} - {{ aqi.quality }}
+                    </span>
+                </p>
+                <p>PM2.5: {{ aqi.pm2_5 }} | PM10: {{ aqi.pm10 }}</p>
+                <p>NO₂: {{ aqi.no2 }} | SO₂: {{ aqi.so2 }} | CO: {{ aqi.co }}</p>
+            </div>
+        </div>
+        {% elif request.GET.city %}
+            <p class="error">❌ City not found! Try again.</p>
+        {% endif %}
+    </div>
+</body>
+</html>

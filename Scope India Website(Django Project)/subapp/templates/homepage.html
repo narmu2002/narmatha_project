@@ -1,0 +1,215 @@
+{%load static%}
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body{
+            margin: 0;
+            font-family: sans-serif;
+    }
+    .navbar{
+            background-color: rgb(24, 24, 87); 
+            padding: 60px;
+            border: 1px solid rgb(238, 230, 2);
+    }
+    .navdiv{
+            display: flex; 
+            align-items: center; 
+            justify-content: space-between;
+    }
+    .container {
+            display: flex;
+    }
+
+    .color{
+            color: rgb(170, 143, 22);
+            background-color: rgb(24, 24, 87);
+            
+            border: 1px solid rgb(238, 230, 2);
+    }
+    
+    .box1{
+            background-color: rgb(33, 33, 116);
+            padding: 230px;
+            color: rgb(244, 196, 7);
+    }
+
+    .topleft{
+            text-align: justify;
+            color: white;
+            position: absolute;
+            top: 400px;
+            left: 50px;
+            width: 500px;
+    }
+
+    .box2 {
+            background-color: rgb(46, 46, 128);
+            padding: 20px;
+            margin: 100px;
+            width: 30%;
+            border: 2px solid rgb(248, 190, 1);
+            position: absolute;
+            top: 300px;
+            right: 30px;
+      
+    }
+
+    .box3 {
+            background-color: rgb(46, 46, 128);
+            padding: 20px;
+            margin: 100px;
+            width: 30%;
+            border: 2px solid rgb(248, 190, 1);
+            position: absolute;
+            top: 500px;
+            right: 30px;
+      
+    }
+
+    .topright {
+            position: absolute;
+            top: 10px;
+            right: 50px;
+            width: 200px;
+    }
+
+    .topleft1 {
+            position: absolute;
+            top: 20px;
+            left: 50px;
+            width: 150px;
+            color: rgb(215, 158, 26);
+    }
+
+    .button1{
+            position: absolute;
+            top: 120px;
+            right: 600px;       
+    }
+
+    .button2{
+            position: absolute;
+            top: 120px;
+            right: 480px;
+    }
+
+    .button3{
+            position: absolute;
+            top: 120px;
+            right: 350px;
+    }
+
+    .button4{
+            position: absolute;
+            top: 120px;
+            right: 200px;
+    }
+
+    .button5{
+            position: absolute;
+            top: 120px;
+            right: 110px;
+    }
+
+    body.li{
+            list-style: none; 
+            display: inline-block;
+        }
+
+    li a{
+            color: white;
+            font-size: 14;
+            font-weight: bold; 
+            margin-right: 25px;
+            text-decoration: none;
+        }
+
+
+  </style> 
+  
+</head>
+<body>
+  <nav class="navbar">
+    <div class="navdiv">
+      <img src="{%static 'image/scopeindia-logo.webp'%}" class="topleft1" alt="">
+      <img src="{%static 'image/logo2.webp'%}"  class="topright" alt="">
+      <ul>
+        <li class="button1" ><a href="{%url 'home'%}">HOME</a></li>
+        <li class="button2" ><a href="{%url 'about'%}">ABOUT US</a></li>
+        <li class="button3"><a href="{%url 'contact'%}">CONTACT US</a></li>
+        <li class="button4"><a href="{%url 'form'%}">REGISTRATION</a></li>
+        <li class="button5"><a href="{%url 'login'%}">LOGIN</a></li>
+      </ul>     
+    </div>
+  </nav>
+
+  <div class="color">
+    <center><h1>YOUR CAREER PARTNER!</h1></center>
+  </div>
+
+  <div style="background-color: rgb(255, 255, 255);" >
+    <center><h2 style="color: rgb(24, 24, 87);">Center for Software, Networking, & Cloud Education</h2></center>
+    <b><p style="color: rgb(77, 77, 216);">One of India's best Training destinations for Software, Networking, DevOps and Cloud Computing courses with 18 years of Industrial experience. Over 1,000 students find their dream careers each year, and we have assisted more than 15,000 students so far.</p></b>
+  </div>
+
+  <div class="box1" >
+    <div class="topleft">
+    <h1 style="color: rgb(255, 196, 2);" >Dreaming about a career in IT</h1> <br>
+    <big><pre style="font-size: x-large">Spearheaded by the working professionals of Suffix E Solutions in flexible
+learning mode, we provide quality training with 100% placement support.</pre></big>
+    <ul>
+      <li>Software Programming</li><br>
+      <li>Data Science & AI</li><br>
+      <li>Data Analytics</li><br>
+      <li>Server Administration</li><br>
+      <li>Cloud Computing</li><br>
+    </ul>
+  </div>
+    <div class="container">
+       <div class="box2">
+        <h2>CLASSES</h2>
+        <h3 style="color: white;">Learn anywhere, anythime - Online and in-person classes available.</h3>
+       </div>
+
+       <div class='container'>
+        <div class="box3">
+         <h2>PLACEMENT</h2>
+         <h3 style="color: white;">Guaranteed Success -100% Placement Support</h3>
+       </div>
+       </div></b>
+  </div>
+</body>
+</html>
+
+
+  <style>
+    
+.footer {
+  background-color: rgb(24, 24, 87);
+  color: white;
+  text-align: center;
+  padding: 20px;
+  border-top: 3px solid rgb(238, 230, 2);
+  width: 98%;
+  position: absolute;
+  top: 800px;
+  left: 0px;
+      
+}
+
+
+  </style>
+</head>
+<body>
+<div class="main-content">
+  <footer class="footer">
+    <p>We are located at Technopark TVM | Thampanoor TVM | Kochi, Kerala | Nagercoil, Tamil Nadu</p>
+    <p>9745936073 (TPK) 9745936073 (TVM) 7592939481 (EKM) 8075536185 (NGL) info@scopeindia.org</p>
+    <p>All Rights Reserved SCOPE INDIA & SUFFIX E SOLUTIONS PRIVATE LIMITED © 2007-2025 | Privacy Policy | Blog</p>
+  </footer>
+</div>
+</body>
+</html>
+
+

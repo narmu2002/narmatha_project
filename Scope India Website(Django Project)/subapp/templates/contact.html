@@ -1,0 +1,177 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    
+    *{
+            text-decoration: none;
+        }
+    body{
+      margin: 0;
+      font-family: sans-serif;
+    }
+    .navbar{
+      background-color: rgb(24, 24, 87); 
+      padding: 60px;
+      border: 1px solid rgb(238, 230, 2);
+        }
+    .navdiv{
+            display: flex; align-items: center; justify-content: space-between;
+        }
+    .topright {
+      position: absolute;
+      top: 10px;
+      right: 50px;
+      width: 200px;
+    }
+
+    .topleft1 {
+      position: absolute;
+      top: 20px;
+      left: 50px;
+      width: 150px;
+      color: rgb(215, 158, 26);
+    }
+
+    .button1{
+        position: absolute;
+        top: 120px;
+        right: 600px;
+        
+    }
+
+    .button2{
+        position: absolute;
+        top: 120px;
+        right: 480px;
+    }
+
+    .button3{
+        position: absolute;
+        top: 120px;
+        right: 350px;
+    }
+    .button4{
+        position: absolute;
+        top: 120px;
+        right: 200px;
+    }
+    .button5{
+        position: absolute;
+        top: 120px;
+        right: 110px;
+    }
+    li{
+            list-style: none; display: inline-block;
+        }
+    li a{
+            color: white; font-size: 14; font-weight: bold; margin-right: 25px;
+        }
+    .color{
+        color: rgb(170, 143, 22);
+        background-color: rgb(24, 24, 87);
+        
+        border: 1px solid rgb(238, 230, 2);
+    }
+    .box1{
+        background-color: rgb(33, 33, 116);
+        padding: 100px;
+        color: rgb(33, 126, 173);
+    }
+    .container {
+      display: flex; justify-content: center; 
+      align-items: center;  
+    }
+    .box2 {
+      background-color: rgb(255, 255, 255);
+      padding: 30px;
+      margin: none;
+      width: 45%;
+      border-radius: 10px;
+    }
+    button{
+      background-color: rgb(12, 2, 145); margin-left: 10px; border-radius: 10px; 
+      padding: 10px; width: 400px; color: white; font-size: x-large;transition: all 0.1s ease-in-out;cursor: pointer;
+    }
+button:active {
+   background-color: rgb(10, 2, 120); /* darker color when clicked */
+  box-shadow: 0 2px #666;
+  transform: translateY(4px); /* moves down when clicked */
+}
+
+</style>
+
+<nav class="navbar">
+    <div class="navdiv">
+      <img src="{%static 'image/scopeindia-logo.webp'%}" class="topleft1" alt="">
+      <img src="{%static 'image/logo2.webp'%}"  class="topright" alt="">
+      <ul>
+        <li class="button1" ><a href="{%url 'home'%}">HOME</a></li>
+        <li class="button2" ><a href="{%url 'about'%}">ABOUT US</a></li>
+        <li class="button3"><a href="{%url 'contact'%}">CONTACT US</a></li>
+        <li class="button4"><a href="{%url 'form'%}">REGISTRATION</a></li>
+        <li class="button5"><a href="{%url 'login'%}">LOGIN</a></li>
+      </ul>     
+    </div>
+</nav> 
+
+<div class="color">
+    <center><h1>SCOPE INDIA Locations & Contact Details</h1></center>
+  </div>
+
+  <div style="background-color: rgb(255, 255, 255);" >
+    <center><h2 style="color: rgb(24, 24, 87);">Center for Software, Networking, & Cloud Education</h2></center>
+    <b><p style="color: rgb(77, 77, 216);">One of India's best Training destinations for Software, Networking, DevOps and Cloud Computing courses with 18 years of Industrial experience. Over 1,000 students find their dream careers each year, and we have assisted more than 15,000 students so far.</p></b>
+  </div>
+<body>
+  
+<div class="box1" >
+    <div class="container">
+      <div class="box2">
+        <h1 style="color: rgb(156, 3, 3);">SCOPE INDIA Nagercoil 1, Tamil Nadu</h1>
+        <h3>Near WCC College, Palace Rd, Nagercoil, Tamil Nadu 629001.</h3>
+        <center>
+        <button>8075536185</button><br><br>
+        <a href="{%url 'mail'%}">
+        <button>narmathanarmu186@gmail.com</button></a><br><br>
+        <a href="https://www.google.com/maps/place/SCOPE+INDIA+Nagercoil+Data+Science+%26+AI,+Analytics,+DevOps,+Python,+PHP,+Java,+Dot+Net,+Flutter,+AWS,+Azure,+RHCE+Courses/@8.1851644,77.4263062,15z/data=!4m6!3m5!1s0x3b04f1a99bd30e13:0xa334f2091c02acd3!8m2!3d8.1851053!4d77.4264116!16s%2Fg%2F11trf6k0qx?entry=ttu&g_ep=EgoyMDI1MDYyMy4yIKXMDSoASAFQAw%3D%3D" target="_blank">
+  <button>Location Route Map</button>
+</a>
+      </div>
+    </div>
+    </center>
+</div>
+</body>
+
+  <style>
+    
+.footer {
+  background-color: rgb(24, 24, 87);
+  color: white;
+  text-align: center;
+  padding: 20px;
+  border-top: 3px solid rgb(238, 230, 2);
+  width: 98%;
+  position: absolute;
+  top: 900px;
+  left: 0px;
+      
+}
+
+
+  </style>
+</head>
+<body>
+<div class="main-content">
+  <footer class="footer">
+    <p>We are located at Technopark TVM | Thampanoor TVM | Kochi, Kerala | Nagercoil, Tamil Nadu</p>
+    <p>9745936073 (TPK) 9745936073 (TVM) 7592939481 (EKM) 8075536185 (NGL) info@scopeindia.org</p>
+    <p>All Rights Reserved SCOPE INDIA & SUFFIX E SOLUTIONS PRIVATE LIMITED © 2007-2025 | Privacy Policy | Blog</p>
+  </footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,152 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    
+   
+    body{
+      margin: 0;
+      font-family: sans-serif;
+    }
+    .navbar{
+      background-color: rgb(24, 24, 87); 
+      padding: 60px;
+      border: 1px solid rgb(238, 230, 2);
+        }
+    .navdiv{
+            display: flex; align-items: center; justify-content: space-between;
+        }
+    .topright {
+      position: absolute;
+      top: 10px;
+      right: 50px;
+      width: 200px;
+    }
+
+    .topleft1 {
+      position: absolute;
+      top: 20px;
+      left: 50px;
+      width: 150px;
+      color: rgb(215, 158, 26);
+    }
+
+    .button1{
+        position: absolute;
+        top: 120px;
+        right: 600px;
+        
+    }
+
+    .button2{
+        position: absolute;
+        top: 120px;
+        right: 480px;
+    }
+
+    .button3{
+        position: absolute;
+        top: 120px;
+        right: 350px;
+    }
+    .button4{
+        position: absolute;
+        top: 120px;
+        right: 200px;
+    }
+    .button5{
+        position: absolute;
+        top: 120px;
+        right: 110px;
+    }
+    li{
+            list-style: none; display: inline-block;
+        }
+    li a{
+            color: white; font-size: 14; font-weight: bold; margin-right: 25px; text-decoration: none;
+        }
+    .color{
+        color: rgb(170, 143, 22);
+        background-color: rgb(24, 24, 87);
+        
+        border: 1px solid rgb(238, 230, 2);
+    }
+    
+
+</style>
+
+<nav class="navbar">
+    <div class="navdiv">
+      <img src="{%static 'image/scopeindia-logo.webp'%}" class="topleft1" alt="">
+      <img src="{%static 'image/logo2.webp'%}"  class="topright" alt="">
+      <ul>
+        <li class="button1" ><a href="{%url 'home'%}">HOME</a></li>
+        <li class="button2" ><a href="{%url 'about'%}">ABOUT US</a></li>
+        <li class="button3"><a href="{%url 'contact'%}">CONTACT US</a></li>
+        <li class="button4"><a href="{%url 'form'%}">REGISTRATION</a></li>
+        <li class="button5"><a href="{%url 'login'%}">LOGIN</a></li>
+      </ul>     
+    </div>
+</nav> 
+
+<style>
+    .container {
+      max-width: 400px;
+     
+      padding: 20px;
+      border: 3px solid #4b6394;
+      border-radius: 30px;
+      box-shadow: 0 0 100px rgba(0,0,0,0.1);
+      background-color: #85b0cc;
+    }
+</style>
+<body><center><br><br><br><u>
+<h2>Verify Temporary Password</h2><br></u>
+<form action="{% url 'verify' %}" method="post">
+  {% csrf_token %}
+  <div class="container">
+  <label>Email:</label>
+  <input type="email" name="email" placeholder="Enter your email" required><br><br>
+  <label>Temporary Password:</label>
+  <input type="text" name="password" required><br><br><br>
+  <button type="submit">Verify</button>
+  </div>
+</form>
+{% if error %}<p style="color:red">{{ error }}</p>{% endif %}
+{% if message %}<p style="color:green">{{ message }}</p>{% endif %}
+</body></center>
+</html>
+
+
+  <style>
+    
+.footer {
+  background-color: rgb(24, 24, 87);
+  color: white;
+  text-align: center;
+  padding: 20px;
+  border-top: 3px solid rgb(238, 230, 2);
+  width: 98%;
+  position: absolute;
+  top: 900px;
+  left: 0px;
+      
+}
+
+
+  </style>
+</head>
+<body>
+<div class="main-content">
+  <footer class="footer">
+    <p>We are located at Technopark TVM | Thampanoor TVM | Kochi, Kerala | Nagercoil, Tamil Nadu</p>
+    <p>9745936073 (TPK) 9745936073 (TVM) 7592939481 (EKM) 8075536185 (NGL) info@scopeindia.org</p>
+    <p>All Rights Reserved SCOPE INDIA & SUFFIX E SOLUTIONS PRIVATE LIMITED © 2007-2025 | Privacy Policy | Blog</p>
+  </footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,241 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    
+    
+    body{
+      margin: 0;
+      font-family: sans-serif;
+    }
+    .navbar{
+      background-color: rgb(24, 24, 87); 
+      padding: 60px;
+      border: 1px solid rgb(238, 230, 2);
+        }
+    .navdiv{
+            display: flex; align-items: center; justify-content: space-between;
+        }
+    .topright {
+      position: absolute;
+      top: 10px;
+      right: 50px;
+      width: 200px;
+    }
+
+    .topleft1 {
+      position: absolute;
+      top: 20px;
+      left: 50px;
+      width: 150px;
+      color: rgb(215, 158, 26);
+    }
+
+    .button1{
+        position: absolute;
+        top: 120px;
+        right: 600px;
+        
+    }
+
+    .button2{
+        position: absolute;
+        top: 120px;
+        right: 480px;
+    }
+
+    .button3{
+        position: absolute;
+        top: 120px;
+        right: 350px;
+    }
+    .button4{
+        position: absolute;
+        top: 120px;
+        right: 200px;
+    }
+    .button5{
+        position: absolute;
+        top: 120px;
+        right: 110px;
+    }
+    li{
+            list-style: none; display: inline-block;
+        }
+    li a{
+            color: white; font-size: 14; font-weight: bold; margin-right: 25px;text-decoration: none;
+        }
+    .color{
+        color: rgb(170, 143, 22);
+        background-color: rgb(24, 24, 87);
+        
+        border: 1px solid rgb(238, 230, 2);
+    }
+    
+
+</style>
+
+<nav class="navbar">
+    <div class="navdiv">
+      <img src="{%static 'image/scopeindia-logo.webp'%}" class="topleft1" alt="">
+      <img src="{%static 'image/logo2.webp'%}"  class="topright" alt="">
+      <ul>
+        <li class="button1" ><a href="{%url 'home'%}">HOME</a></li>
+        <li class="button2" ><a href="{%url 'about'%}">ABOUT US</a></li>
+        <li class="button3"><a href="{%url 'contact'%}">CONTACT US</a></li>
+        <li class="button4"><a href="{%url 'form'%}">REGISTRATION</a></li>
+        <li class="button5"><a href="{%url 'login'%}">LOGIN</a></li>
+      </ul>     
+    </div>
+</nav> 
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .container {
+      max-width: 600px;
+      margin: 60px auto;
+      padding: 30px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      font-family: Arial, sans-serif;
+    }
+
+    .detail-row {
+      display: flex;
+      margin-bottom: 10px;
+    }
+
+    .label {
+      width: 150px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .value {
+      flex: 1;
+      color: #555;
+    }
+
+    .error {
+      color: red;
+      text-align: center;
+    }
+
+    h1, h3 {
+      text-align: center;
+    }
+    button{
+        background-color: darkolivegreen;
+        
+    }
+
+    
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Welcome, {{ user.name }}</h1>
+
+  {% if error %}
+    <p class="error">{{ error }}</p>
+  {% else %}
+    <h3>Your Details:</h3><br>
+
+    <div class="detail-row">
+      <div class="label">Name:</div>
+      <div class="value">{{ user.name }}</div>
+    </div>
+
+    <div class="detail-row">
+      <div class="label">Age:</div>
+      <div class="value">{{ user.age }}</div>
+    </div>
+
+    <div class="detail-row">
+      <div class="label">Email:</div>
+      <div class="value">{{ user.email }}</div>
+    </div>
+
+    <div class="detail-row">
+      <div class="label">Gender:</div>
+      <div class="value">{{ user.gender }}</div>
+    </div>
+
+    <div class="detail-row">
+      <div class="label">Date of Birth:</div>
+      <div class="value">{{ user.date_of_birth }}</div>
+    </div>
+
+    <div class="detail-row">
+      <div class="label">Phone Number:</div>
+      <div class="value">{{ user.phone_number }}</div>
+    </div>
+
+    <div class="detail-row">
+      <div class="label">Country:</div>
+      <div class="value">{{ user.country }}</div>
+    </div>
+
+    <div class="detail-row">
+      <div class="label">State:</div>
+      <div class="value">{{ user.state }}</div>
+    </div>
+
+    <div class="detail-row">
+      <div class="label">District:</div>
+      <div class="value">{{ user.district }}</div>
+    </div>
+
+    <div class="detail-row">
+      <div class="label">City:</div>
+      <div class="value">{{ user.city }}</div>
+    </div>
+
+    <div class="detail-row">
+      <div class="label">Hobbies:</div>
+      <div class="value">{{ user.hobbies }}</div>
+    </div><br>
+  {% endif %}
+<center>
+  <button><a style="color: white;" href="{% url 'logout' %}">Logout</a></center></button>
+</div>
+
+</body>
+</html>
+
+
+  <style>
+    
+.footer {
+  background-color: rgb(24, 24, 87);
+  color: white;
+  text-align: center;
+  padding: 20px;
+  border-top: 3px solid rgb(238, 230, 2);
+  width: 98%;
+  position: absolute;
+  top: 900px;
+  left: 0px;
+      
+}
+
+
+  </style>
+</head>
+<body>
+<div class="main-content">
+  <footer class="footer">
+    <p>We are located at Technopark TVM | Thampanoor TVM | Kochi, Kerala | Nagercoil, Tamil Nadu</p>
+    <p>9745936073 (TPK) 9745936073 (TVM) 7592939481 (EKM) 8075536185 (NGL) info@scopeindia.org</p>
+    <p>All Rights Reserved SCOPE INDIA & SUFFIX E SOLUTIONS PRIVATE LIMITED © 2007-2025 | Privacy Policy | Blog</p>
+  </footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,293 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    
+    *{
+            text-decoration: none;
+        }
+    body{
+      margin: 0;
+      font-family: sans-serif;
+       background-color: azure;
+      
+    }
+    .navbar{
+      background-color: rgb(24, 24, 87); 
+      padding: 60px;
+      border: 1px solid rgb(238, 230, 2);
+        }
+    .navdiv{
+            display: flex; align-items: center; justify-content: space-between;
+        }
+    .topright {
+      position: absolute;
+      top: 10px;
+      right: 50px;
+      width: 200px;
+    }
+
+    .topleft1 {
+      position: absolute;
+      top: 20px;
+      left: 50px;
+      width: 150px;
+      color: rgb(215, 158, 26);
+    }
+
+    .button1{
+        position: absolute;
+        top: 120px;
+        right: 600px;
+        
+    }
+
+    .button2{
+        position: absolute;
+        top: 120px;
+        right: 480px;
+    }
+
+    .button3{
+        position: absolute;
+        top: 120px;
+        right: 350px;
+    }
+    .button4{
+        position: absolute;
+        top: 120px;
+        right: 200px;
+    }
+    .button5{
+        position: absolute;
+        top: 120px;
+        right: 110px;
+    }
+    li{
+            list-style: none; display: inline-block;
+        }
+    li a{
+            color: white; font-size: 14; font-weight: bold; margin-right: 25px;
+        }
+    .color{
+        color: rgb(170, 143, 22);
+        background-color: rgb(24, 24, 87);
+        
+        border: 1px solid rgb(238, 230, 2);
+    }
+    .box1{
+        background-color: rgb(33, 33, 116);
+        padding: 100px;
+        color: rgb(33, 126, 173);
+    }
+    .container {
+      display: flex; justify-content: center; 
+      align-items: center;  
+    }
+    .box2 {
+      background-color: rgb(255, 255, 255);
+      padding: 30px;
+      margin: none;
+      width: 45%;
+      border-radius: 10px;
+    }
+    button{
+      background-color: rgb(12, 2, 145); margin-left: 10px; border-radius: 10px; padding: 10px; width: 400px; color: white; font-size: x-large;
+    }
+
+    .form-group {
+      
+      align-items: center;
+    }
+    .form-group label {
+      margin-right: 5px;
+      margin-inline-start: auto;
+    }
+    .form-group input {
+      margin-right: 200px;
+    }
+
+
+    input[type="text"],
+    input[type="number"],
+    input[type="date"],
+    input[type="phonenumber"],
+    input[type="file"] {
+        width: 300px; /* You can set to any size you like */
+        height: 40px;
+        font-size: 16px;
+    }
+     select {
+        width: 300px; /* Adjust width as you like */
+        height: 40px;
+        font-size: 16px;
+    }
+
+</style>
+
+<nav class="navbar">
+    <div class="navdiv">
+      <img src="{%static 'image/scopeindia-logo.webp'%}" class="topleft1" alt="">
+      <img src="{%static 'image/logo2.webp'%}"  class="topright" alt="">
+      <ul>
+        <li class="button1" ><a href="{%url 'home'%}">HOME</a></li>
+        <li class="button2" ><a href="{%url 'about'%}">ABOUT US</a></li>
+        <li class="button3"><a href="{%url 'contact'%}">CONTACT US</a></li>
+        <li class="button4"><a href="{%url 'form'%}">REGISTRATION</a></li>
+        <li class="button5"><a href="{%url 'login'%}">LOGIN</a></li>
+      </ul>     
+    </div>
+</nav> 
+
+<style>
+
+  form {
+      margin: 50px; /* You can adjust as needed */
+      margin-left: 100;
+      margin-right: 100;
+      
+    }
+    
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    input, select {
+      width: 60;
+      padding: 5px;
+      box-sizing: border-box;
+    }
+
+  
+  button {
+    margin-top: 10px;
+    height: 45px;
+    width: 150px;
+    font-size: 18px;
+  }
+  .container {
+      max-width: 1200px;
+      margin: 30px auto;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+</style>
+<center><br>
+
+  <h1 >REGISTRATION  FORM</h1></center><br>
+  <big>
+    <div class="container">
+      <form action=" " method="post" enctype="multipart/form-data">
+        {%csrf_token%}
+        <div style="display: flex; gap: 50px;">
+          <label for="id_name">Name:</label>
+          <input type="text" name="name" id="id_name" placeholder="enter your name">
+          <div style="color: red;">{{forms.name.errors}}</div>
+          <br>
+
+          <label for="id_age">Age:</label>
+          <input type="number" name="age" id="id_age" placeholder="enter your age">
+          <div style="color: red;">{{forms.age.errors}}</div>
+          <br>
+        </div><br>
+
+
+        <div style="display: flex; gap: 50px;">
+          <label for="id_email">Email:</label>
+          <input type="text" name="email" id="id_email" placeholder="enter your email">
+          <div style="color: red;">{{forms.email.errors}}</div>
+          <br>
+
+          <label for="id_date_of_birth">Date of Birth:</label>
+          <input type="date" name="date_of_birth" id="id_date_of_birth" >
+          <div style="color: red;">{{forms.date_of_birth.errors}}</div>
+          <br>
+
+        </div> <br>
+
+        <div style="display: flex; gap: 50px;">
+          <label for="id_phone_number">Phone number:</label>
+          <input type="phonenumber" name="phone_number" id="id_phone_number" placeholder="enter your phone number">
+          <div style="color: red;">{{forms.phone_number.errors}}</div>
+          <br>
+
+          <label>Gender:</label>
+          {{ forms.gender }}  <!-- This automatically renders as a <select> tag -->
+          <div style="color: red;">{{ forms.gender.errors }}</div><br>
+            
+        </div><br>
+
+        <div style="display: flex; gap: 50px;">
+            <label>Country:</label>
+            {{ forms.country }}  <!-- This automatically renders as a <select> tag -->
+            <div style="color: red;">{{ forms.country.errors }}</div><br>
+    
+
+            <label>State:</label>
+            {{ forms.state }}  <!-- This automatically renders as a <select> tag -->
+            <div style="color: red;">{{ forms.state.errors }}</div><br>
+        </div><br>
+
+        <div style="display: flex; gap: 50px;">
+            <label>District:</label>
+            {{ forms.district }}  <!-- This automatically renders as a <select> tag -->
+            <div style="color: red;">{{ forms.district.errors }}</div><br>
+
+            <label>City:</label>
+            {{ forms.city }}  <!-- This automatically renders as a <select> tag -->
+            <div style="color: red;">{{ forms.city.errors }}</div><br>
+        </div><br>
+
+        <div style="display: flex; gap: 50px;">
+            <label>Hobbies:</label>
+            {{ forms.hobbies }}  <!-- This automatically renders as a <select> tag -->
+            <div style="color: red;">{{ forms.hobbies.errors }}</div><br>
+        </div><br>
+
+            <label for="id_file">Upload File:  </label>
+            <input type="file" name="file" id="id_file">
+            <div style="color: red;">{{forms.file.errors}}</div><br>
+    
+            <center> <button type="submit">Submit</button></center>
+
+</form> 
+    </div>
+</big>
+</div>
+
+  <style>
+    
+.footer {
+  background-color: rgb(24, 24, 87);
+  color: white;
+  text-align: center;
+  padding: 20px;
+  border-top: 3px solid rgb(238, 230, 2);
+  width: 98%;
+  position: absolute;
+  top: 1100px;
+  left: 0px;
+      
+}
+
+
+  </style>
+</head>
+<body>
+<div class="main-content">
+  <footer class="footer">
+    <p>We are located at Technopark TVM | Thampanoor TVM | Kochi, Kerala | Nagercoil, Tamil Nadu</p>
+    <p>9745936073 (TPK) 9745936073 (TVM) 7592939481 (EKM) 8075536185 (NGL) info@scopeindia.org</p>
+    <p>All Rights Reserved SCOPE INDIA & SUFFIX E SOLUTIONS PRIVATE LIMITED © 2007-2025 | Privacy Policy | Blog</p>
+  </footer>
+</div>
+</body>
+</html>

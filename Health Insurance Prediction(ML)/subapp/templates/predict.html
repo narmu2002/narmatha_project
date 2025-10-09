@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Medical Cost Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #74ebd5, #ACB6E5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .form-container {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 4px 15px rgba(0,0,0,0.2);
+            width: 350px;
+            text-align: center;
+        }
+        h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            text-align: left;
+            margin: 10px 0 5px;
+            font-weight: bold;
+        }
+        input, select, button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+        }
+        button {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Health Insurance Cost Prediction</h2>
+        <form method="POST">
+            {% csrf_token %}
+            
+          <label for="age">Age:</label>
+<input type="number" id="age" name="age" min="0" max="100" required style="appearance: textfield; -moz-appearance: textfield; -webkit-appearance: none;">
+
+
+
+
+
+
+            <label for="sex">Sex:</label>
+    <select name="sex" required>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+    </select><br>
+
+            <label for="bmi">BMI:</label>
+    <input type="number" step="0.1" name="bmi" required><br>
+
+            <label for="children">Children:</label>
+<select name="children" required>
+    <option value="0">0</option>
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+</select><br>
+
+
+    <label for="smoker">Smoker:</label>
+    <select name="smoker" required>
+        <option value="yes">Yes</option>
+        <option value="no">No</option>
+    </select><br>
+
+            <button type="submit">Predict Cost</button>
+        </form>
+    </div>
+</body>
+</html>
