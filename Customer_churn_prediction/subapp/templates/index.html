@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Customer Churn Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+        }
+        .container {
+            width: 520px;
+            margin: 40px auto;
+            background: white;
+            padding: 25px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        label {
+            font-weight: bold;
+        }
+        input, select, button {
+            width: 100%;
+            padding: 8px;
+            margin: 6px 0 12px 0;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .result {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Customer Churn Prediction</h2>
+
+    <form method="POST">
+        {% csrf_token %}
+
+        <label>Account Length</label>
+        <input type="number" name="Account_length" required>
+
+        <label>International Plan</label>
+        <select name="International_plan" required>
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+        </select>
+
+        <label>Voice Mail Plan</label>
+        <select name="Voice_mail_plan" required>
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+        </select>
+
+        <label>Number of Voice Mail Messages</label>
+        <input type="number" name="Number_vmail_messages" required>
+
+        <label>Total Day Minutes</label>
+        <input type="number" step="any" name="Total_day_minutes" required>
+
+        <label>Total Day Calls</label>
+        <input type="number" name="Total_day_calls" required>
+
+        <label>Total Evening Minutes</label>
+        <input type="number" step="any" name="Total_eve_minutes" required>
+
+        <label>Total Evening Calls</label>
+        <input type="number" name="Total_eve_calls" required>
+
+        <label>Total Night Minutes</label>
+        <input type="number" step="any" name="Total_night_minutes" required>
+
+        <label>Total Night Calls</label>
+        <input type="number" name="Total_night_calls" required>
+
+        <label>Total International Minutes</label>
+        <input type="number" step="any" name="Total_intl_minutes" required>
+
+        <label>Total International Calls</label>
+        <input type="number" name="Total_intl_calls" required>
+
+        <label>Customer Service Calls</label>
+        <input type="number" name="Customer_service_calls" required>
+
+        <button type="submit">Predict Churn</button>
+    </form>
+
+    {% if prediction %}
+        <div class="result">
+            Prediction: {{ prediction }}<br>
+            Churn Probability: {{ probability }} %
+        </div>
+    {% endif %}
+</div>
+
+</body>
+</html>
