@@ -127,3 +127,5 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
+
+SECRET_KEY = os.environ.get('SECRET_KEY')
